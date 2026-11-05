@@ -1,0 +1,41 @@
+
+import React, { useState, useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(true)
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      offset: 100
+    });
+    document.documentElement.classList.add('dark');
+  }, []);
+    useEffect(() => {
+      AOS.refresh()
+    }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle('dark',newDarkMode);
+  };
+  return (
+    <div className={
+      darkMode 
+      ? `bg-linear-to-br from-gray-900 via-[#230d2e] to-purple-900 min-h-screen`
+      : `bg-linear-to-br from-gray-50  to-blue-50 min-h-screen`}>
+      
+
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+       <Hero darkMode={darkMode}/>
+    </div>
+  )
+}
+
+export default App
