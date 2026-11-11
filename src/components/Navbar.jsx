@@ -16,6 +16,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   ]
 
   return (
+    <>
     <div className='fixed z-50 w-full mt-4 flex justify-center'>
 
       <motion.nav
@@ -150,6 +151,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     </AnimatePresence>
     </motion.nav>
     </div>
+    </>
   )
 }
 
