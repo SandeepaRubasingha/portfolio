@@ -88,7 +88,7 @@ const Hero = () => {
         relative'
         data-aos='fade-left'>
           <div className='relative'>
-            <img src={hero} alt="hero" className='w-full h-auto object-cover transform
+            <img src={hero} alt="hero" className='w-full h-125 object-cover transform
             hover:scale-105 transition-transform duration-500'/>
           </div>
            </div>

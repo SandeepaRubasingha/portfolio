@@ -11,6 +11,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
@@ -48,7 +49,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           {navItems.map((item) => (
             <a
               key={item.name}
-              href={item.htref}
+              href={item.href}
               className='text-gray-700
               dark:text-gray-300
               hover:text-purple-600
