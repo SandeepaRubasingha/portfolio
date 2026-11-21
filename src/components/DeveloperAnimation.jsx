@@ -124,7 +124,7 @@ const DeveloperAnimation = () => {
                 </div>
 
                 {/* Typing Code */}
-                <div className='p-2 h-[130px] font-mono text-[10px] sm:text-xs text-violet-200'>
+                <div className='p-2 h-[120px] font-mono text-[10px] sm:text-xs text-violet-200 '>
                     <pre className='whitespace-pre-wrap break-words'>
                         {visibleText}
                         <motion.span
@@ -139,7 +139,7 @@ const DeveloperAnimation = () => {
                 </div>
 
                 {/* Live Status */}
-                <div className='px-1 pb-5 flex items-center gap-1 text-[9px] text-green-400 font-mono'>
+                <div className=' flex items-center text-[10px] text-green-400 font-mono pl-2'>
                     <span className='w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse' />
                     Live coding...
                 </div>
