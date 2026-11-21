@@ -1,12 +1,12 @@
-
+import DeveloperAnimation from './DeveloperAnimation'
 import React from 'react'
 import about from '../assets/about.png'
 import { ArrowRight } from 'lucide-react'
 
 const About = () => {
     const stat = [
-        { value: '1+', label: 'Years' },
-        { value: '10+', label: 'Projects' },
+        { value: '5+', label: 'Years' },
+        { value: '50+', label: 'Projects' },
         { value: '100%', label: 'Satisfaction' },
     ]
 
@@ -15,40 +15,20 @@ const About = () => {
             id='about'
             className='min-h-screen flex items-center py-20 px-4 sm:px-6 overflow-hidden'
         >
-            <div
-                className='max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'
-            >
+            <div className='max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 items-center'>
 
-                {/* About Content Section */}
+                {/* About Image Section */}
                 <div
-                    className='order-1 lg:order-2'
-                    data-aos='fade-left'
-                >
-
-                    <span
-                        className='inline-block text-violet-500 dark:text-[#e0c0fd] font-semibold text-sm tracking-wider uppercase mb-3 mt-10'
-                    >
-                        About Me
-                    </span>
-
-                    <h2
-                        className='text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 dark:text-white text-gray-900'
-                    >
-                        Turning Ideas Into
-                    </h2>
-                    
-                       {/* About Image Section */}
-                <div
-                    className='relative order-1 lg:order-1'
+                    className='relative order-2 lg:order-1 lg:row-span-2'
                     data-aos='fade-right'
                 >
-                    <div className='relative w-full max-w-sm mx-auto lg:mx-0 '>
-
+                    <div className='relative w-full max-w-sm mx-auto lg:mx-0'>
+                         
                         <div
                             className='absolute inset-0 bg-linear-to-tr from-violet-500 to-transparent rounded-[40%_60%_60%_40%/40%_60%_70%_60%] transform rotate-3'
                         >
                         </div>
-                  
+
                         <img
                             src={about}
                             alt='About'
@@ -59,13 +39,35 @@ const About = () => {
                             className='absolute -bottom-4 -right-4 w-20 h-20 rounded-full blur-2xl'
                         >
                         </div>
-
+                     <DeveloperAnimation />
                     </div>
                 </div>
 
+                {/* About Title Section */}
+                <div
+                    className='order-1 lg:order-2 lg:self-end'
+                    data-aos='fade-left'
+                >
+                    <span
+                        className='inline-block text-violet-500 dark:text-[#e0c0fd] font-semibold text-sm tracking-wider uppercase mb-2 mt-5'
+                    >
+                        About Me
+                    </span>
 
+                    <h2
+                        className='text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 dark:text-white text-gray-900'
+                    >
+                        Turning Ideas Into
+                    </h2>
+                </div>
+
+                {/* About Content Section */}
+                <div
+                    className='order-3 lg:order-3 lg:self-start'
+                    data-aos='fade-left'
+                >
                     <p
-                        className='text-base lg:text-lg mb-8 leading-relaxed dark:text-gray-300 text-gray-600'
+                        className='text-base lg:text-lg mb-8 leading-relaxed dark:text-gray-300 text-gray-600 lg:flex-row'
                     >
                         I am a passionate Full-Stack Web Developer and ICT
                         undergraduate with a strong interest in building

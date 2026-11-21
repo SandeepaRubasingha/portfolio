@@ -8,6 +8,7 @@ import About from './components/About'
 import Certificates from './components/Certificates'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true)
@@ -42,6 +43,7 @@ const App = () => {
         <Certificates darkMode={darkMode}/>
         <Skills darkMode={darkMode}/>
         <Projects darkMode={darkMode}/>
+        <Contact darkMode={darkMode}/>
     </div>
   )
 }

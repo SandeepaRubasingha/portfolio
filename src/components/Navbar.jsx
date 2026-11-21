@@ -1,4 +1,4 @@
-
+import logo from '../assets/logo.png'
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Sun, Moon, Menu, X, Phone } from 'lucide-react'
@@ -40,8 +40,17 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           bg-linear-to-r from-purple-600 to-violet-600
           bg-clip-text text-transparent'
         >
-          Portfolio<span className='text-gray-800 
-          dark:text-white'>.</span>
+          <motion.a
+          href='#home'
+          whileHover={{ scale: 1.05 }}
+          className='flex items-center'
+        >
+          <img
+           src={logo}
+            alt='Sandeepa Logo'
+            className='w-auto h-12 object-contain'
+          />
+</motion.a>
         </motion.a>
         
         <div className='hidden md:flex items-center gap-x-6'>

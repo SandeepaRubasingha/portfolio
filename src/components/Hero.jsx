@@ -1,16 +1,54 @@
 import { DownloadIcon,Mail } from 'lucide-react'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa6'
 import CV from '../assets/CV.pdf'
 import hero from '../assets/hero.png'
 
 const Hero = () => {
+
+  const roles = [
+    'Frontend Developer',
+    'Web Developer',
+    'ML Engineer',
+    'Data Analyst',
+    'Business Analyst'
+]
+
+const [roleIndex, setRoleIndex] = useState(0)
+const [text, setText] = useState('')
+const [isDeleting, setIsDeleting] = useState(false)
+
+useEffect(() => {
+    const currentRole = roles[roleIndex]
+
+    const typingSpeed = isDeleting ? 50 : 100
+
+    const timeout = setTimeout(() => {
+        if (!isDeleting) {
+            if (text.length < currentRole.length) {
+                setText(currentRole.slice(0, text.length + 1))
+            } else {
+                setIsDeleting(true)
+            }
+        } else {
+            if (text.length > 0) {
+                setText(currentRole.slice(0, text.length - 1))
+            } else {
+                setIsDeleting(false)
+                setRoleIndex((prev) => (prev + 1) % roles.length)
+            }
+        }
+    }, text === currentRole && !isDeleting ? 1500 : typingSpeed)
+
+    return () => clearTimeout(timeout)
+}, [text, roleIndex, isDeleting])
+
     const socialIcons = [
         {icon: FaGithub, alt: 'GitHub', href: 'https://github.com/SandeepaRubasingha'},
         {icon: FaLinkedin, alt: 'LinkedIn', href: 'https://www.linkedin.com/in/sandeepa-rubasingha-854534342/'},
         {icon: FaFacebook, alt: 'Facebook', href: 'https://www.facebook.com/?_rdc=2&_rdr#'},
-        {icon: FaInstagram, alt: 'Instagram', href: '#'},
+        {icon: FaInstagram, alt: 'Instagram', href: 'https://www.instagram.com/sandeepa_rubasingha?lqvp=MTlzcG0wOGdubjhzNg=='},
     ]
 
   return (
@@ -48,11 +86,12 @@ const Hero = () => {
            </h1>
            <h2 className='text-xl sm:text-2xl lg:text-3xl font-mono
            mb-4 dark:text-violet-400 text-gray-700'>
-            Frontend developer
+            {text}
+            <span className='animate-pulse'>|</span>
            </h2>
            <p  className='mb-8 leading-relaxed max-w-md lg:max-w-lg dark:text-gray-300 text-gray-700'>
-            I create beautiful, responsive websites with a focus on user experience and modern design.
-           </p>
+          I am passionate about developing innovative web applications, building intelligent solutions, and transforming data into meaningful insights. 
+          </p>
            <div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
             <a href={CV} download className='w-full sm:w-auto'>
               <button className='w-full sm:w-auto inline-flex items-center

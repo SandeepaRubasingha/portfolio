@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react'
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
 import project3 from '../assets/project3.png'
+import project4 from '../assets/project4.png'
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
@@ -13,23 +14,33 @@ const Projects = () => {
         {
             id: 1,
             image: project1,
-            title: '3D Portfolio Website',
+            title: 'coffee shop website',
             desc: 'web development',
-            tags: ['React', 'Tailwind css', 'Framer-Motion']
+            tags: ['Html', 'CSS', 'JavaScript'],
+            github: 'https://github.com/SandeepaRubasingha/tea-shop-project'
         },
         {
             id: 2,
-            image: project1,
-            title: '3D Portfolio Website',
+            image: project2,
+            title: 'Hotel Room Booking site',
             desc: 'web development',
-            tags: ['React', 'Tailwind css', 'Framer-Motion']
+            tags: ['Html', 'CSS', 'JavaScript']
+        },
+        {
+            id: 4,
+            image: project4,
+            title: '3D Portfoli Website',
+            desc: 'web development',
+            tags: ['React', 'Tailwind css', 'Framer-Motion'],
+            github: 'https://github.com/SandeepaRubasingha/portfolio'
         },
         {
             id: 3,
-            image: project1,
-            title: '3D Portfolio Website',
+            image: project3,
+            title: 'proconnect customer support service',
             desc: 'web development',
-            tags: ['React', 'Tailwind css', 'Framer-Motion']
+            tags: ['Html', 'CSS+Boostrap', 'Javascript'],
+            github:'https://github.com/VinodPeiris/Pro_Connect'
         }
     ]
 
@@ -154,7 +165,7 @@ const Projects = () => {
 
                                     <div className='flex items-center gap-4 pt-2 border-t dark:border-zinc-800/80 border-gray-100'>
                                         <a
-                                            href="#"
+                                             href={project.github}
                                             target='_blank'
                                             rel='noopener noreferrer'
                                             className='inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-300 dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-black'
