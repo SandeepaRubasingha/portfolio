@@ -5,8 +5,8 @@ import { ArrowRight } from 'lucide-react'
 
 const About = () => {
     const stat = [
-        { value: '5+', label: 'Years' },
-        { value: '50+', label: 'Projects' },
+        { value: '1+', label: 'Years' },
+        { value: '10+', label: 'Projects' },
         { value: '100%', label: 'Satisfaction' },
     ]
 
