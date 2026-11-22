@@ -2,7 +2,6 @@ import { DownloadIcon,Mail } from 'lucide-react'
 import React, { useState, useEffect } from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa6'
-import CV from '../assets/CV.pdf'
 import hero from '../assets/hero.png'
 
 const Hero = () => {
@@ -93,7 +92,7 @@ useEffect(() => {
           I am passionate about developing innovative web applications, building intelligent solutions, and transforming data into meaningful insights. 
           </p>
            <div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
-            <a href={CV} download className='w-full sm:w-auto'>
+            <a href="#" download className='w-full sm:w-auto'>
               <button className='w-full sm:w-auto inline-flex items-center
               justify-center gap-2 px-8 py-3 rounded-full text-white 
               font-semibold bg-linear-to-r from-violet-500
